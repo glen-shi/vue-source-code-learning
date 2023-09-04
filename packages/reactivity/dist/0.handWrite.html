@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module">
+    import { throttle,debounce } from './handWrite.js'
+    window.addEventListener('resize',()=>console.log('没有防抖'));
+    window.addEventListener('resize', debounce(()=>console.log('有防抖'), 500))
+
+    window.fn = throttle(()=>{
+      console.log('rua')
+    },2000)
+  
+  </script>
+</body>
+</html>
